@@ -21,18 +21,21 @@ SECTIONS
    
   .text : 
   {
-    *(.text)      
+    KEEP(*(.text))
+	KEEP(*(.text.*))
     . = ALIGN(16);
   } > m_text
       
   .rodata :
   {
-    *(.rodata)
+    KEEP(*(.rodata))
+    KEEP(*(.rodata.*))
   } > m_text
      
 	.data   : 
 	{
-	  *(.data)     
+	  KEEP(*(.data))
+      KEEP(*(.data.*))
 	  . = ALIGN(4);
 	}  > m_data AT>m_text
     

@@ -1,0 +1,10 @@
+binaries/
+
+build_tools/e200_ewl2/
+build_tools/msys32/
+build_tools/powerpc-eabivle-4_9/
+
+*.o
+*.d
+*.map
+*.objdump

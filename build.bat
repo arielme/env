@@ -6,7 +6,7 @@ set PATH=%PATH%;%CD%/build_tools/msys32/usr/bin;%CD%/build_tools/powerpc-eabivle
 echo on
 
 cd %CD%/project
-make -j all
+make all
 cd %CD%
 
 echo off

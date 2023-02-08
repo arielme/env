@@ -9,8 +9,6 @@
 #define RAM_START   (uint8_t*)0x40000000
 #define RAM_END     (uint8_t*)0x400BFFFF
 
-int MemcpyFromFlashToRam(uint8_t *src, uint8_t *dst, uint32_t cnt)
-    __attribute__ ((section (".data")))
-    __attribute__ ((longcall));
+int MemcpyFromFlashToRam(uint8_t *src, uint8_t *dst, uint32_t cnt) __attribute__ ((section(".data"), longcall));
 
 #endif // _MEM_UTILS_H_

@@ -2,12 +2,8 @@
 
 int MemcpyFromFlashToRam(uint8_t *src, uint8_t *dst, uint32_t cnt)
 {
-    if ( (src < FLASH_START) || (FLASH_END < src+cnt) )
-    {
-        return -1;
-    }
-
-    if ( (dst < RAM_START) || (RAM_END <  dst+cnt) )
+    if ( (src < FLASH_START) || (FLASH_END < src+cnt) ||
+         (dst < RAM_START) || (RAM_END <  dst+cnt) )
     {
         return -1;
     }

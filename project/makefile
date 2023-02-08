@@ -7,10 +7,6 @@
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include utils/subdir.mk
-#-include src/subdir.mk
-#-include Project_Settings/Startup_Code/subdir.mk
-#-include Project_Settings/Linker_Files/subdir.mk
-#-include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -22,7 +18,7 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY += \
 payload_Z4_0.objdump \
-
+payload_Z4_0.siz \
 
 # All Target
 all: payload_Z4_0.elf secondary-outputs
@@ -37,7 +33,13 @@ payload_Z4_0.elf: $(OBJS) ../code/Project_Settings/Linker_Files/57xx_flash.ld $(
 
 payload_Z4_0.objdump: payload_Z4_0.elf
 	@echo 'Invoking: Standard S32DS objdump'
-	objdump -d ../binaries/payload_Z4_0.elf > ../binaries/payload_Z4_0.objdump
+	objdump -D ../binaries/payload_Z4_0.elf > ../binaries/payload_Z4_0.objdump
+	@echo 'Finished building: $@'
+	@echo ' '
+
+payload_Z4_0.siz: payload_Z4_0.elf
+	@echo 'Invoking: Standard S32DS Print Size'
+	powerpc-eabivle-size --format=berkeley ../binaries/payload_Z4_0.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
