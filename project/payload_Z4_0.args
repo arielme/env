@@ -1,5 +1,5 @@
 -T"../code/Project_Settings/Linker_Files/57xx_flash.ld"
--Wl,-Map,"payload_Z4_0.map"
+-Wl,-Map,"../binaries/payload_Z4_0.map"
 -nodefaultlibs
 -nostartfiles
 -Xlinker

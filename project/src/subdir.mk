@@ -2,7 +2,11 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-USER_OBJS :=
+# Add inputs and outputs from these tool invocations to the build variables
+SUBDIR := src
 
-LIBS :=
+C_SRCS := \
+src.c
 
+S_SRCS := \
+test.S
